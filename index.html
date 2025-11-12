@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aditi Singh | Computational Biologist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: #f7f8fa;
-      color: #222;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background: #f8f9fb;
     }
     header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background: linear-gradient(120deg, #dfe9f3, #ffffff);
       text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #2b5876, #4e4376);
-      color: #fff;
     }
     header img {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      border: 4px solid #fff;
-      margin-bottom: 20px;
       object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-right: 40px;
+    }
+    header .intro {
+      max-width: 500px;
     }
     header h1 {
-      font-size: 2.5em;
+      font-size: 2.2em;
       margin: 0;
+      color: #222;
     }
     header p {
-      font-size: 1.2em;
-      color: #e6e6e6;
+      margin: 8px 0;
+      color: #555;
     }
     nav {
       background: #333;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      text-align: center;
     }
     nav a {
       color: #fff;
       text-decoration: none;
-      padding: 15px 20px;
+      padding: 14px 20px;
       display: inline-block;
       transition: background 0.3s;
     }
     nav a:hover {
-      background: #4e4376;
+      background: #555;
     }
     section {
       max-width: 900px;
@@ -56,48 +62,52 @@
       padding: 0 20px;
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
     }
     section h2 {
       border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
+      padding-bottom: 8px;
       margin-top: 0;
-      color: #333;
+      color: #2a2a2a;
     }
-    section ul {
-      list-style: disc;
-      padding-left: 25px;
+    section p, section li {
+      color: #555;
+      line-height: 1.6;
     }
+    ul { padding-left: 20px; }
     footer {
-      background: #1c1c1c;
-      color: #aaa;
+      background: #f0f0f0;
       text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-      font-size: 0.9em;
+      padding: 25px;
+      color: #666;
+      margin-top: 40px;
+      font-size: 0.95em;
     }
-    a {
-      color: #3c5aff;
+    .social-links a {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
     }
-    a:hover {
-      text-decoration: underline;
+    .social-links a:hover {
+      color: #4e4376;
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <!-- You can replace the link below with your own photo -->
-    <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="Aditi Singh">
-    <h1>Aditi Singh</h1>
-    <p>Director, Bioinformatics Core | Wayne State University</p>
-    <p>Computational Biologist • Reproductive Immunology • Multi-Omics</p>
+    <img src="profile.jpg" alt="Aditi Singh">
+    <div class="intro">
+      <h1>Aditi Singh, PhD</h1>
+      <p>Director, Bioinformatics Core (OmicsInsight) | Wayne State University</p>
+      <p><em>Computational Biologist · Reproductive Immunology · Multi-Omics Integration</em></p>
+    </div>
   </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -105,7 +115,7 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      I’m a computational biologist exploring immune cell dynamics, reproductive biology, and multi-omics data integration.
+      I’m a computational biologist exploring immune cell dynamics, reproductive biology, and multi-omics data integration. 
       My work focuses on uncovering biological mechanisms through single-cell and spatial transcriptomics,
       computational modeling, and systems biology.
     </p>
@@ -114,43 +124,35 @@
   <section id="research">
     <h2>Research Highlights</h2>
     <ul>
-      <li>Decoding functional and developmental trajectories of uterine dendritic cells</li>
-      <li>Fetal sex–specific immune programming at the maternal–fetal interface</li>
-      <li>Single-cell and multi-omics integration for placental biology</li>
-      <li>Development of macrophage subtype classifier (<strong>macromarker</strong>)</li>
-    </ul>
-  </section>
-
-  <section id="publications">
-    <h2>Selected Publications</h2>
-    <ul>
-      <li>Singh <em>et al.</em> (2025). <strong>Multi-Omics Characterization of Human Uterine Dendritic Cells.</strong></li>
-      <li>Singh <em>et al.</em> (2025). <strong>Fetal Sex Shapes Immune Landscape of the Decidua.</strong></li>
+      <li>Decoding developmental trajectories of uterine dendritic cells</li>
+      <li>Fetal sex-specific immune programming at the maternal–fetal interface</li>
+      <li>Multi-omics integration in placental biology and miscarriage</li>
+      <li>Macrophage subtype classifier development (<strong>macromarker</strong>)</li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>Tools & Projects</h2>
+    <h2>Selected Projects</h2>
     <ul>
-      <li><strong>macromarker</strong> – R package for macrophage subtype classification</li>
-      <li>CellChat-based workflows for immune cell communication networks</li>
+      <li><strong>macromarker</strong> — R package for macrophage subtype classification</li>
+      <li>CellChat-based workflows for immune signaling analysis</li>
       <li>Seurat-integrated pipelines for scRNA-seq and spatial transcriptomics</li>
     </ul>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>
-      📧 <a href="mailto:your.email@wayne.edu">your.email@wayne.edu</a><br>
-      🔗 <a href="https://www.linkedin.com/in/aditisingh">LinkedIn</a> |
+    <p>📧 <a href="mailto:your.email@wayne.edu">your.email@wayne.edu</a></p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/aditisingh">LinkedIn</a> |
       <a href="https://scholar.google.com/">Google Scholar</a> |
-      <a href="https://github.com/aditisingh">GitHub</a>
-    </p>
+      <a href="https://github.com/aditispt">GitHub</a>
+    </div>
   </section>
 
   <footer>
-    © 2025 Aditi Singh · Built with GitHub Pages
+    © 2025 Aditi Singh · Built with ❤️ using GitHub Pages
   </footer>
-
 </body>
 </html>
+
