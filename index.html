@@ -4,105 +4,132 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aditi Singh | Computational Biologist</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
+    /* ---------- GLOBAL ---------- */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       color: #333;
       background: #f8f9fb;
     }
-    body { font-family: 'Poppins', sans-serif; color: #333; }
-h1, h2 { font-family: 'Playfair Display', serif; }
 
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- HEADER ---------- */
     header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #eef2f3 0%, #ffffff 100%);
-  border-bottom: 2px solid #f0f0f0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #eef2f3 0%, #ffffff 100%);
+      border-bottom: 2px solid #f0f0f0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      text-align: center;
+    }
 
     header img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 5px solid #fff;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-right: 40px;
+    }
+
     header img:hover {
-  transform: scale(1.05);
-}
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
 
     header h1 {
-  font-size: 2.4em;
-  margin: 10px 0;
-  background: linear-gradient(90deg, #0077b6, #00b4d8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+      font-size: 2.4em;
+      margin: 10px 0;
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     header .intro {
       max-width: 500px;
     }
-    header h1 {
-      font-size: 2.2em;
-      margin: 0;
-      color: #222;
-    }
+
     header p {
       margin: 8px 0;
       color: #555;
     }
+
+    /* ---------- NAVIGATION ---------- */
     nav {
-      background: #333;
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
       padding: 14px 20px;
       display: inline-block;
-      transition: background 0.3s;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: background 0.3s, transform 0.2s;
     }
+
     nav a:hover {
-      background: #555;
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
     }
+
+    /* ---------- SECTIONS ---------- */
     section {
-  background: #fff;
-  padding: 30px;
-  margin: 40px auto;
-  max-width: 900px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+      background: #fff;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 900px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
 
-h2 {
-  border-left: 5px solid #00b4d8;
-  padding-left: 10px;
-  color: #222;
-}
     section h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 8px;
+      border-left: 5px solid #00b4d8;
+      padding-left: 10px;
       margin-top: 0;
       color: #2a2a2a;
     }
+
     section p, section li {
       color: #555;
       line-height: 1.6;
     }
+
     ul { padding-left: 20px; }
+
+    /* ---------- FOOTER ---------- */
     footer {
       background: #f0f0f0;
       text-align: center;
@@ -111,19 +138,41 @@ h2 {
       margin-top: 40px;
       font-size: 0.95em;
     }
+
+    /* ---------- SOCIAL LINKS ---------- */
     .social-links a {
       margin: 0 10px;
-      color: #333;
+      color: #0077b6;
       text-decoration: none;
       font-weight: 600;
     }
+
     .social-links a:hover {
-      color: #4e4376;
+      color: #00b4d8;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header img {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      nav a {
+        display: block;
+        padding: 12px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
     <img src="Screen Shot 2022-07-15 at 3.19.12 PM.png" alt="Aditi Singh">
     <div class="intro">
@@ -133,6 +182,7 @@ h2 {
     </div>
   </header>
 
+  <!-- NAVIGATION -->
   <nav>
     <a href="#about">About</a>
     <a href="#research">Research</a>
@@ -140,29 +190,32 @@ h2 {
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About</h2>
     <p>
       I hold a Ph.D. in Molecular Genetics and Genomics with a passion for turning messy multi-omics data into meaningful biological insights. With expertise in NGS, single-cell transcriptomics, machine learning, and multi-omics integration, I thrive on decoding complex biological systems, whether it's identifying cancer biomarkers, deciphering stress-induced transcriptomic changes, or predicting disease trajectories.
-
-Let’s connect, especially if you’re working at the intersection of immunology, genomics, or women’s health.
+    </p>
+    <p>
+      Let’s connect, especially if you’re working at the intersection of immunology, genomics, or women’s health.
     </p>
   </section>
 
+  <!-- RESEARCH -->
   <section id="research">
     <h2>Research Highlights</h2>
-    <ul>
-      <p>
+    <p>
       My research bridges computational immunology, reproductive biology, and oncology through integrative single-cell and multi-omics approaches. I focus on decoding immune cell programming and molecular reorganization within the maternal–fetal interface and tumor microenvironments.
     </p>
     <ul>
-      <li><strong>Functional and developmental trajectories of uterine dendritic cells</strong> — Mapped distinct subsets and immune signatures across the menstrual cycle using scRNA-seq and spatial transcriptomics (iScience, 2025).</li>
-      <li><strong>Sexual dimorphism in placental immune responses</strong> — Dissected sex-specific transcriptional and pathway-level immune regulation in human placenta and decidua (JCI, under revision).</li>
+      <li><strong>Functional and developmental trajectories of uterine dendritic cells</strong> — Mapped distinct subsets and immune signatures across the menstrual cycle using scRNA-seq and spatial transcriptomics (<em>iScience</em>, 2025).</li>
+      <li><strong>Sexual dimorphism in placental immune responses</strong> — Dissected sex-specific transcriptional and pathway-level immune regulation in human placenta and decidua (<em>JCI</em>, under revision).</li>
       <li><strong>Fetal-maternal immune crosstalk</strong> — Characterized ligand–receptor signaling networks driving implantation success and tolerance in early pregnancy.</li>
       <li><strong>Tumor-associated macrophage reprogramming</strong> — Identified metabolic and transcriptional determinants of macrophage phenotypes across SNA<sub>high</sub> vs SNA<sub>low</sub> ovarian cancer models.</li>
     </ul>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Selected Projects</h2>
     <ul>
@@ -173,6 +226,7 @@ Let’s connect, especially if you’re working at the intersection of immunolog
     </ul>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
     <p>📧 <a href="mailto:aditi.singh2@med.wayne.edu">aditi.singh2@med.wayne.edu</a></p>
@@ -183,9 +237,9 @@ Let’s connect, especially if you’re working at the intersection of immunolog
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     © 2025 Aditi Singh · Built using GitHub Pages
   </footer>
 </body>
 </html>
-
