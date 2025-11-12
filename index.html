@@ -29,7 +29,7 @@
     a:hover {
       text-decoration: underline;
     }
-
+ 
     /* ---------- HEADER ---------- */
     header {
       display: flex;
@@ -170,6 +170,50 @@
         padding: 12px;
       }
     }
+
+    /* add here: */
+    .pub-list {
+      margin-top: 15px;
+    }
+    .pub-item {
+      background: #f9fafc;
+      border-left: 4px solid #00b4d8;
+      padding: 12px 18px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .pub-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+    .pub-title {
+      font-weight: 600;
+      display: block;
+      color: #222;
+    }
+    .pub-journal {
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 3px solid #00b4d8;
+    }
+    .timeline .event {
+      margin-bottom: 20px;
+    }
+    .timeline h3 {
+      margin: 0;
+      color: #0077b6;
+      font-weight: 600;
+    }
+    .timeline p {
+      margin: 5px 0 0;
+      color: #555;
+    }
   </style>
 </head>
 
@@ -247,35 +291,6 @@
   </div>
 </section>
 
-  .pub-list {
-  margin-top: 15px;
-}
-
-.pub-item {
-  background: #f9fafc;
-  border-left: 4px solid #00b4d8;
-  padding: 12px 18px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.pub-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-}
-
-.pub-title {
-  font-weight: 600;
-  display: block;
-  color: #222;
-}
-
-.pub-journal {
-  color: #555;
-  font-size: 0.9em;
-}
-
   <section id="timeline">
   <h2>Education & Positions</h2>
   <div class="timeline">
@@ -298,26 +313,6 @@
   </div>
 </section>
 
-  .timeline {
-  position: relative;
-  padding-left: 30px;
-  border-left: 3px solid #00b4d8;
-}
-
-.timeline .event {
-  margin-bottom: 20px;
-}
-
-.timeline h3 {
-  margin: 0;
-  color: #0077b6;
-  font-weight: 600;
-}
-
-.timeline p {
-  margin: 5px 0 0;
-  color: #555;
-}
 
   
   <!-- CONTACT -->
