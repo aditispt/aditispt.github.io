@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Pan-Stress Forces Loss of Stemness and Drives Developmental Imbalance
+title: Pan-Stress Forces Loss of Stemness
 hero_image: /assets/images/pan-stress/pan_stress_overview.png
 ---
 
