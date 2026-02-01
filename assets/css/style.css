@@ -1,141 +1,86 @@
-/* Global reset */
+/* =========================
+   Global reset + variables
+========================= */
 * {
   box-sizing: border-box;
 }
 
 :root {
-  --accent: #2563eb; /* professional blue */
+  --accent: #2563eb;
+  --text-main: #1f2933;
+  --text-muted: #374151;
+  --bg-page: #f9fafb;
+  --bg-card: #f8fafc;
+  --border-light: #e5e7eb;
 }
 
+/* =========================
+   Base layout
+========================= */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
                Roboto, Helvetica, Arial, sans-serif;
-  color: #1f2933;
-  background-color: #ffffff;
+  color: var(--text-main);
+  background: var(--bg-page);
   line-height: 1.6;
 }
 
-/* Main container */
 .site-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 3rem 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
 }
 
-/* Headings */
+/* =========================
+   Typography
+========================= */
 h1 {
   font-size: 2.6rem;
   margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
 h2 {
   font-size: 1.8rem;
   margin-top: 3rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--border-light);
 }
 
 h3 {
-  font-size: 1.3rem;
-  margin-top: 2rem;
+  font-size: 1.25rem;
+  margin-top: 0;
 }
 
-/* Paragraphs */
 p {
   font-size: 1.05rem;
+  color: var(--text-muted);
   margin-bottom: 1rem;
-  color: #374151;
 }
 
-/* Links */
+/* =========================
+   Links
+========================= */
 a {
-  color: #2563eb;
+  color: var(--accent);
   text-decoration: none;
-  font-weight: 500;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Project sections */
-.project-page img {
-  margin: 2rem 0;
-  border-radius: 8px;
-}
-
-/* Lists */
-ul {
-  padding-left: 1.2rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* Divider feel */
-hr {
-  border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 3rem 0;
-}
-
-/* Section spacing */
-h2 {
-  margin-top: 3rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid #eaeaea;
-}
-
-/* Project titles */
-h3 {
-  margin-top: 2rem;
-  font-size: 1.25rem;
-}
-
-/* Make project blocks feel like cards */
-h3 + p {
-  background: #fafafa;
-  padding: 1.2rem 1.4rem;
-  border-radius: 10px;
-  border: 1px solid #e6e6e6;
-  margin-top: 0.8rem;
-}
-
-/* Project links */
-a {
   font-weight: 600;
-  color: #2563eb;
-  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* Horizontal rules */
-hr {
-  border: none;
-  border-top: 1px solid #e5e5e5;
-  margin: 3rem 0;
-}
-
-/* Make intro tighter */
-.site-container > p:first-of-type {
-  font-size: 1.05rem;
-  color: #374151;
-}
-
-/* Hero section */
+/* =========================
+   Hero section
+========================= */
 .hero {
   margin-bottom: 4rem;
-}
-
-.hero h1 {
-  font-size: 2.6rem;
-  letter-spacing: -0.02em;
 }
 
 .hero .subtitle {
@@ -146,48 +91,56 @@ hr {
 }
 
 .hero p {
-  font-size: 1.05rem;
   max-width: 700px;
   color: #334155;
 }
 
-/* Project card spacing */
-h3 + p {
+/* =========================
+   Project cards
+========================= */
+.project {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.6rem 1.8rem;
+  margin-bottom: 2rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-h3 + p:hover {
+.project:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
-/* Project cards */
-.project {
-  padding: 1.6rem 1.8rem;
-  border-radius: 12px;
-  background: #f8fafc;
-  margin-bottom: 2rem;
-  border: 1px solid #e5e7eb;
-}
 
 .project h3 {
-  margin-top: 0;
+  margin-bottom: 0.4rem;
 }
 
-.project a {
-  font-weight: 600;
-  color: #2563eb;
+.project p {
+  margin-bottom: 0.6rem;
 }
 
-.project a:hover {
-  text-decoration: underline;
+/* =========================
+   Images + lists
+========================= */
+.project-page img {
+  margin: 2rem 0;
+  border-radius: 8px;
 }
 
-body {
-  background: #f9fafb;
+ul {
+  padding-left: 1.2rem;
 }
 
-.site-container {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Divider
+========================= */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 3rem 0;
 }
