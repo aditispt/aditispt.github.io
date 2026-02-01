@@ -24,7 +24,7 @@ title: "Aditi Singh"
   </div>
 
   <div class="hero-image">
-    <img src="/assets/images/aditi-headshot.jpg" alt="Aditi Singh headshot">
+    <img src="/assets/images/aditi-headshot.PNG" alt="Aditi Singh headshot">
   </div>
 </section>
 
