@@ -4,15 +4,13 @@ title: "Aditi Singh"
 ---
 
 <section class="hero-card">
-  <div class="hero-card-content">
+  <div class="hero-content">
     <h1>Aditi Singh</h1>
-
     <p class="hero-tagline">
       Computational biologist decoding immune dynamics, reproductive biology,
       and multi-omics systems
     </p>
-
-    <p class="hero-sub">
+    <p class="hero-role">
       Director, Bioinformatics Core · Wayne State University
     </p>
   </div>
