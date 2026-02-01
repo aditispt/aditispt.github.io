@@ -7,7 +7,7 @@ title: "Aditi Singh"
   <div class="hero-content">
     <h1>Aditi Singh</h1>
     <p class="hero-tagline">
-      Director of Bioinformatics | Leading Single-Cell & Multi-Omics for Translational Immunology & Reproductive Biology
+      Leading Single-Cell & Multi-Omics for Translational Immunology & Reproductive Biology
     </p>
     <p class="hero-role">
       Director, Bioinformatics Core · Wayne State University
