@@ -15,20 +15,29 @@ My work focuses on uncovering biological mechanisms through single-cell and spat
 
 </div>
 
-## Selected Projects
+<div class="project">
 
 ### 🧬 Pan-Stress Forces Loss of Stemness
-**Environmental stress converges on shared developmental failure programs in embryonic stem cells.**
+
+Environmental stress converges on shared developmental failure programs in embryonic stem cells.
 
 [View project →](/projects/pan-stress.html)
 
+</div>
+
 ---
 
+<div class="project">
+
 ### 🧫 Decoding Functional and Developmental Trajectories of Uterine Dendritic Cells
-**First single-cell, cycle-wide characterization of human uterine dendritic cells across the menstrual cycle.**
+
+First single-cell, cycle-wide characterization of human uterine dendritic cells across the menstrual cycle.
 
 [View project →](/projects/dendritic-cells.html)
 
+</div>
+
+---
 
 ## 🔬 Research Highlights
 - Decoding functional and developmental trajectories of uterine dendritic cells  
