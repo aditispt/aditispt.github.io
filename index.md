@@ -3,11 +3,17 @@ layout: default
 title: "Aditi Singh"
 ---
 
-# 👋 Hi, I'm Aditi Singh
-**Director, Bioinformatics Core | Wayne State University**
+<div class="hero">
 
-I'm a computational biologist exploring immune cell dynamics, reproductive biology, and multi-omics data integration.  
+# 👋 Hi, I'm Aditi Singh
+
+<span class="subtitle">Director, Bioinformatics Core | Wayne State University</span>
+
+I'm a computational biologist exploring immune cell dynamics, reproductive biology, and multi-omics data integration.
+
 My work focuses on uncovering biological mechanisms through single-cell and spatial transcriptomics, computational modeling, and systems biology.
+
+</div>
 
 ## Selected Projects
 
