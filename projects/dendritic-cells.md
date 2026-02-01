@@ -40,6 +40,7 @@ Dendritic cells constitute less than 2% of endometrial immune cells, making them
 - **First comprehensive atlas** of normal human uterine dendritic cells
 - Establishes a developmental framework for studying implantation failure and infertility
 - Provides molecular markers to distinguish tissue-resident vs peripheral DCs
-- Accepted (in principle) as **first-author manuscript**
+- **Singh A**, Mor G, et al. *Decoding Functional and Developmental Trajectories of Uterine Dendritic Cells*. **iScience**, 2025.
+
 
 
