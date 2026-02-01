@@ -38,31 +38,48 @@ body {
 }
 
 /* --------------------
-   Hero section
+   Hero layout
 -------------------- */
 .hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
   padding-bottom: 3rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
   border-bottom: 1px solid var(--border-light);
 }
 
-.hero h1 {
-  font-size: 2.7rem;
-  letter-spacing: -0.02em;
+.hero-text h1 {
+  font-size: 2.8rem;
   margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
 }
 
-.hero .subtitle {
+.hero-subtitle {
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--text-muted);
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.5rem;
 }
 
-.hero p {
-  max-width: 720px;
+.hero-text p {
   font-size: 1.05rem;
+  max-width: 560px;
   color: #334155;
+}
+
+/* --------------------
+   Hero image (CSS crop)
+-------------------- */
+.hero-image img {
+  width: 100%;
+  max-width: 340px;
+  height: 420px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
 
 /* --------------------
@@ -127,43 +144,8 @@ li {
 }
 
 /* --------------------
-   Horizontal rules
+   Responsive
 -------------------- */
-hr {
-  border: none;
-  border-top: 1px solid var(--border-light);
-  margin: 3.5rem 0;
-}
-/* HERO LAYOUT */
-.hero {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  margin-bottom: 5rem;
-}
-
-.hero-text h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.6rem;
-  letter-spacing: -0.02em;
-}
-
-.hero-subtitle {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #475569;
-  margin-bottom: 1.5rem;
-}
-
-.hero-text p {
-  font-size: 1.05rem;
-  max-width: 560px;
-  color: #334155;
-}
-
-/* IMAGE */
-/* Responsive */
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
@@ -176,15 +158,6 @@ hr {
   }
 
   .hero-image img {
-    margin: 0 auto;
+    margin: 2rem auto 0;
   }
-}
-.hero-image img {
-  width: 100%;
-  max-width: 340px;
-  height: 420px;               /* controls how much is visible */
-  object-fit: cover;           /* crops instead of squishing */
-  object-position: center 20%; /* shifts crop downward to remove black top */
-  border-radius: 18px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
