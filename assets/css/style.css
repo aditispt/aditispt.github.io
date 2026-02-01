@@ -77,3 +77,50 @@ hr {
   border-top: 1px solid #e5e7eb;
   margin: 3rem 0;
 }
+
+/* Section spacing */
+h2 {
+  margin-top: 3rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #eaeaea;
+}
+
+/* Project titles */
+h3 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+/* Make project blocks feel like cards */
+h3 + p {
+  background: #fafafa;
+  padding: 1.2rem 1.4rem;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  margin-top: 0.8rem;
+}
+
+/* Project links */
+a {
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Horizontal rules */
+hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 3rem 0;
+}
+
+/* Make intro tighter */
+.site-container > p:first-of-type {
+  font-size: 1.05rem;
+  color: #374151;
+}
+
