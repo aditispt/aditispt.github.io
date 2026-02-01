@@ -4,56 +4,45 @@ title: "Aditi Singh"
 ---
 
 <div class="hero">
+  <h1>👋 Hi, I'm Aditi Singh</h1>
+  <div class="subtitle">Director, Bioinformatics Core | Wayne State University</div>
 
-# 👋 Hi, I'm Aditi Singh
+  <p>
+    I'm a computational biologist exploring immune cell dynamics, reproductive biology,
+    and multi-omics data integration.
+  </p>
 
-<span class="subtitle">Director, Bioinformatics Core | Wayne State University</span>
+  <p>
+    My work focuses on uncovering biological mechanisms through single-cell and spatial
+    transcriptomics, computational modeling, and systems biology.
+  </p>
+</div>
 
-I'm a computational biologist exploring immune cell dynamics, reproductive biology, and multi-omics data integration.
+<h2>Selected Projects</h2>
 
-My work focuses on uncovering biological mechanisms through single-cell and spatial transcriptomics, computational modeling, and systems biology.
-
+<div class="project">
+  <h3>🧬 Pan-Stress Forces Loss of Stemness</h3>
+  <p>
+    Environmental stress converges on shared developmental failure programs
+    in embryonic stem cells.
+  </p>
+  <a href="/projects/pan-stress.html">View project →</a>
 </div>
 
 <div class="project">
-
-### 🧬 Pan-Stress Forces Loss of Stemness
-
-Environmental stress converges on shared developmental failure programs in embryonic stem cells.
-
-[View project →](/projects/pan-stress.html)
-
+  <h3>🧠 Decoding Functional and Developmental Trajectories of Uterine Dendritic Cells</h3>
+  <p>
+    First single-cell, cycle-wide characterization of human uterine dendritic cells
+    across the menstrual cycle.
+  </p>
+  <a href="/projects/dendritic-cells.html">View project →</a>
 </div>
 
----
+<h2>🔬 Research Highlights</h2>
 
-<div class="project">
-
-### 🧫 Decoding Functional and Developmental Trajectories of Uterine Dendritic Cells
-
-First single-cell, cycle-wide characterization of human uterine dendritic cells across the menstrual cycle.
-
-[View project →](/projects/dendritic-cells.html)
-
-</div>
-
----
-
-## 🔬 Research Highlights
-- Decoding functional and developmental trajectories of uterine dendritic cells  
-- Fetal sex–specific immune programming at the maternal–fetal interface  
-- Single-cell and multi-omics integration for placental biology  
-- Development of macrophage subtype classifier (**macromarker**)
-
-## 📚 Publications
-- Singh *et al.* (2025). *Multi-Omics Characterization of Human Uterine DCs.*  
-- Singh *et al.* (2025). *Fetal Sex Shapes Immune Landscape of the Decidua.*
-
-## 💡 Tools & Methods
-- scRNA-seq, CITE-seq, CellChat, Seurat, DESeq2, iPathwayGuide  
-- R, Python, Bash, high-performance computing
-
-## 📫 Contact
-- [Email](mailto:aditi.singh2@med.wayne.edu)  
-- [LinkedIn](https://www.linkedin.com/in/aditisingh)  
-- [Google Scholar](https://scholar.google.com/)
+<ul>
+  <li>Decoding functional and developmental trajectories of uterine dendritic cells</li>
+  <li>Fetal sex-specific immune programming at the maternal–fetal interface</li>
+  <li>Single-cell and multi-omics integration for placental biology</li>
+  <li>Development of macrophage subtype classifier (<strong>macromarker</strong>)</li>
+</ul>
