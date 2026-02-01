@@ -11,10 +11,6 @@ This project provides the **first single-cell–resolved, cycle-wide characteriz
 
 ---
 
-<img src="/assets/images/dc/dc_overview.png" alt="Uterine dendritic cell project overview" style="max-width:100%; border-radius:8px;">
-
----
-
 ## The Problem
 Dendritic cells constitute less than 2% of endometrial immune cells, making them difficult to study using bulk approaches. Existing studies lacked the resolution to distinguish tissue-resident populations from infiltrating DCs or to map functional specialization across the menstrual cycle.
 
