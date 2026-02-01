@@ -3,28 +3,22 @@ layout: default
 title: "Aditi Singh"
 ---
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>👋 Hi, I’m Aditi Singh</h1>
+<section class="hero-card">
+  <div class="hero-card-content">
+    <h1>Aditi Singh</h1>
 
-    <div class="hero-subtitle">
-      Director, Bioinformatics Core | Wayne State University
-    </div>
-
-    <p>
-      I’m a computational biologist exploring immune cell dynamics,
-      reproductive biology, and multi-omics data integration.
+    <p class="hero-tagline">
+      Computational biologist decoding immune dynamics, reproductive biology,
+      and multi-omics systems
     </p>
 
-    <p>
-      My work focuses on uncovering biological mechanisms through
-      single-cell and spatial transcriptomics, computational modeling,
-      and systems biology.
+    <p class="hero-sub">
+      Director, Bioinformatics Core · Wayne State University
     </p>
   </div>
 
-  <div class="hero-image">
-    <img src="/assets/images/aditi-headshot.PNG" alt="Aditi Singh headshot">
+  <div class="hero-avatar">
+    <img src="/assets/images/aditi-headshot.PNG" alt="Aditi Singh">
   </div>
 </section>
 
