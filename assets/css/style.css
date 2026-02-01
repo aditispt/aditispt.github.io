@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --accent: #2563eb; /* professional blue */
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
@@ -155,4 +159,35 @@ h3 + p {
 h3 + p:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+/* Project cards */
+.project {
+  padding: 1.6rem 1.8rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  margin-bottom: 2rem;
+  border: 1px solid #e5e7eb;
+}
+
+.project h3 {
+  margin-top: 0;
+}
+
+.project a {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background: #f9fafb;
+}
+
+.site-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
 }
