@@ -146,3 +146,13 @@ hr {
   max-width: 700px;
   color: #334155;
 }
+
+/* Project card spacing */
+h3 + p {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+h3 + p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
