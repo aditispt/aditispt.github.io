@@ -82,6 +82,10 @@ body {
   box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
 
+.hero-image img {
+  filter: contrast(1.02) saturate(1.05);
+}
+
 /* --------------------
    Section headers
 -------------------- */
