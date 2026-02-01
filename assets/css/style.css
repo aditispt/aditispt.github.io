@@ -187,3 +187,12 @@ hr {
     margin: 0 auto;
   }
 }
+.hero-image img {
+  width: 100%;
+  max-width: 340px;
+  height: 420px;               /* controls how much is visible */
+  object-fit: cover;           /* crops instead of squishing */
+  object-position: center 20%; /* shifts crop downward to remove black top */
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
