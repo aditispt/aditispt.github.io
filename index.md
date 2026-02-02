@@ -16,11 +16,10 @@ title: "Aditi Singh"
       Director, Bioinformatics Core · Wayne State University
     </p>
 
-    <!-- Hero buttons -->
     <div class="hero-buttons">
-      <a href="/about/" class="hero-btn primary">About Me</a>
-      <a href="/publications/" class="hero-btn">Publications</a>
-      <a href="/projects/" class="hero-btn">Projects</a>
+      <a href="/projects/about.html" class="hero-btn primary">About Me</a>
+      <a href="/projects/publications.html" class="hero-btn">Publications</a>
+      <a href="/projects/projects.html" class="hero-btn">Projects</a>
     </div>
   </div>
 
@@ -30,30 +29,3 @@ title: "Aditi Singh"
 </section>
 
 <h2>Selected Projects</h2>
-
-<div class="project">
-  <h3>🧬 Pan-Stress Forces Loss of Stemness</h3>
-  <p>
-    Environmental stress converges on shared developmental failure programs
-    in embryonic stem cells.
-  </p>
-  <a href="/projects/pan-stress">View project →</a>
-</div>
-
-<div class="project">
-  <h3>🧠 Decoding Functional and Developmental Trajectories of Uterine Dendritic Cells</h3>
-  <p>
-    First single-cell, cycle-wide characterization of human uterine dendritic cells
-    across the menstrual cycle.
-  </p>
-  <a href="/projects/dendritic-cells">View project →</a>
-</div>
-
-<h2>🔬 Research Highlights</h2>
-
-<ul>
-  <li>Decoding functional and developmental trajectories of uterine dendritic cells</li>
-  <li>Fetal sex-specific immune programming at the maternal–fetal interface</li>
-  <li>Single-cell and multi-omics integration for placental biology</li>
-  <li>Development of macrophage subtype classifier (<strong>macromarker</strong>)</li>
-</ul>
