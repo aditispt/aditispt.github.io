@@ -45,6 +45,11 @@ title: "Aditi Singh"
   </div>
 </section>
 
+<div class="hero-buttons">
+  <a href="/about" class="hero-btn">About</a>
+  <a href="/publications" class="hero-btn">Publications</a>
+  <a href="/projects" class="hero-btn">Projects</a>
+</div>
 
 <h2>Selected Projects</h2>
 
