@@ -6,15 +6,6 @@ title: "Aditi Singh"
 <section class="hero-card">
   <div class="hero-content">
     <h1>Aditi Singh</h1>
-    <p class="hero-tagline">
-      Leading Single-Cell & Multi-Omics for Translational Immunology & Reproductive Biology
-    </p>
-    <p class="hero-role">
-      Director, Bioinformatics Core · Wayne State University
-    </p>
-    <section class="hero-card">
-  <div class="hero-content">
-    <h1>Aditi Singh</h1>
 
     <p class="hero-tagline">
       Leading Single-Cell & Multi-Omics for Translational Immunology &
@@ -25,7 +16,7 @@ title: "Aditi Singh"
       Director, Bioinformatics Core · Wayne State University
     </p>
 
-    <!-- NEW: Hero buttons -->
+    <!-- Hero buttons -->
     <div class="hero-buttons">
       <a href="/about/" class="hero-btn primary">About Me</a>
       <a href="/publications/" class="hero-btn">Publications</a>
@@ -38,19 +29,6 @@ title: "Aditi Singh"
   </div>
 </section>
 
-  </div>
-
-  <div class="hero-avatar">
-    <img src="/assets/images/aditi_headshot.jpeg" alt="Aditi Singh">
-  </div>
-</section>
-
-<div class="hero-buttons">
-  <a href="/about" class="hero-btn">About</a>
-  <a href="/publications" class="hero-btn">Publications</a>
-  <a href="/projects" class="hero-btn">Projects</a>
-</div>
-
 <h2>Selected Projects</h2>
 
 <div class="project">
@@ -59,7 +37,7 @@ title: "Aditi Singh"
     Environmental stress converges on shared developmental failure programs
     in embryonic stem cells.
   </p>
-  <a href="/projects/pan-stress.html">View project →</a>
+  <a href="/projects/pan-stress">View project →</a>
 </div>
 
 <div class="project">
@@ -68,7 +46,7 @@ title: "Aditi Singh"
     First single-cell, cycle-wide characterization of human uterine dendritic cells
     across the menstrual cycle.
   </p>
-  <a href="/projects/dendritic-cells.html">View project →</a>
+  <a href="/projects/dendritic-cells">View project →</a>
 </div>
 
 <h2>🔬 Research Highlights</h2>
