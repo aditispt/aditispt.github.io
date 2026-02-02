@@ -185,3 +185,54 @@ li {
   color: #374151;
 }
 
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-buttons {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #e0e7ff;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+
+  transition: all 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-1px);
+}
+
+/* Primary button */
+.hero-btn.primary {
+  background: white;
+  color: #1e3a8a;
+  border-color: white;
+}
+
+.hero-btn.primary:hover {
+  background: #e0e7ff;
+}
+
+/* Mobile centering */
+@media (max-width: 900px) {
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
