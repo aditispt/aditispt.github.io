@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Pan-Stress Forces Loss of Stemness
+permalink: /projects/pan-stress/
 hero_image: /assets/images/pan-stress/pan_stress_overview.png
 ---
 
