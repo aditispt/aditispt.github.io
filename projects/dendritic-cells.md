@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Decoding Functional and Developmental Trajectories of Human Uterine Dendritic Cells
+permalink: /projects/dendritic-cells/
 hero_image: /assets/images/dc/dc_overview.jpg
 ---
 
