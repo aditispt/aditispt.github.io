@@ -6,7 +6,7 @@ title: Projects
 ## Selected Projects
 
 <div class="project">
-  <h3>🧬 Pan-Stress Forces Loss of Stemness</h3>
+  <h3>Pan-Stress Forces Loss of Stemness</h3>
   <p>
     Environmental stress converges on shared developmental failure programs
     in embryonic stem cells.
@@ -15,7 +15,7 @@ title: Projects
 </div>
 
 <div class="project">
-  <h3>🧠 Functional & Developmental Trajectories of Uterine Dendritic Cells</h3>
+  <h3>Functional & Developmental Trajectories of Uterine Dendritic Cells</h3>
   <p>
     First single-cell, cycle-wide characterization of human uterine dendritic cells
     across the menstrual cycle.
