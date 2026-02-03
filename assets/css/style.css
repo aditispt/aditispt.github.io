@@ -16,6 +16,47 @@
   --border-light: #e5e7eb;
 }
 
+/* =========================
+   TOP NAVIGATION
+========================= */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1e3a8a;
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+
 /* --------------------
    Base styles
 -------------------- */
