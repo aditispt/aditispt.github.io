@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Aditi Singh — Bioinformatics & Computational Immunology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #090c12;
+      --surface: #10141d;
+      --surface2: #171c28;
+      --border: #1e2436;
+      --accent: #5b8dee;
+      --accent2: #c084fc;
+      --accent3: #34d399;
+      --accent4: #f97316;
+      --text: #e6e9f4;
+      --text-muted: #8791a8;
+      --text-faint: #424e67;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 60px;
+      background: rgba(9, 12, 18, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 1rem; color: var(--text);
+      text-decoration: none; letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none;
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 8rem 3rem 4rem; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 65% 45%, rgba(91,141,238,0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 45% at 15% 65%, rgba(192,132,252,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(52,211,153,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 56px 56px; opacity: 0.25;
+      mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 20%, transparent 80%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 1120px; margin: 0 auto; width: 100%; position: relative; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.73rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 26px; height: 1px; background: var(--accent);
+    }
+    h1 {
+      font-family: var(--serif); font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 400; line-height: 1.1; letter-spacing: 0.01em; margin-bottom: 1rem;
+      color: var(--text); font-style: normal;
+    }
+    h1 .phd {
+      font-size: 0.45em; font-weight: 400; letter-spacing: 0.04em;
+      color: var(--text-muted); vertical-align: middle; font-style: normal;
+      font-family: var(--sans); margin-left: 0.3em;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem; color: var(--text-muted); max-width: 580px;
+      margin-bottom: 2rem; font-weight: 300; line-height: 1.75;
+    }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
+    .hero-meta-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem; color: var(--text-muted);
+    }
+    .hero-meta-item svg { opacity: 0.45; flex-shrink: 0; }
+    .btn-row { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.4rem; border-radius: 6px;
+      font-size: 0.83rem; font-weight: 500; text-decoration: none;
+      cursor: pointer; transition: all 0.2s; border: none;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #4a7de0; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--text-faint); color: var(--text); }
+
+    .hero-stats {
+      position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 0.9rem;
+    }
+    .stat-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.1rem 1.4rem;
+      text-align: center; min-width: 115px;
+    }
+    .stat-number {
+      font-family: var(--serif); font-size: 1.9rem; font-weight: 600;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      display: block; line-height: 1; margin-bottom: 0.3rem;
+    }
+    .stat-label { font-size: 0.7rem; color: var(--text-faint); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* ── COMMON ── */
+    section { padding: 5.5rem 3rem; }
+    .container { max-width: 1120px; margin: 0 auto; width: 100%; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent2); margin-bottom: 0.9rem;
+    }
+    .section-label::before { content: ''; display: block; width: 18px; height: 1px; background: var(--accent2); }
+    h2 {
+      font-family: var(--serif); font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 2.8rem;
+    }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--surface); }
+    .about-grid { display: grid; grid-template-columns: 1fr 340px; gap: 5rem; align-items: start; }
+    .about-text p { color: var(--text-muted); margin-bottom: 1.1rem; font-size: 0.95rem; line-height: 1.85; }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.8rem; }
+    .tag { padding: 0.32rem 0.85rem; border-radius: 20px; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.02em; }
+    .tag-blue  { background: rgba(91,141,238,0.12);  color: #84aaff; border: 1px solid rgba(91,141,238,0.22); }
+    .tag-purple{ background: rgba(192,132,252,0.1);  color: #d4a8fd; border: 1px solid rgba(192,132,252,0.2); }
+    .tag-green { background: rgba(52,211,153,0.09);  color: #6ee7b7; border: 1px solid rgba(52,211,153,0.18); }
+    .tag-orange{ background: rgba(249,115,22,0.1);   color: #fdba74; border: 1px solid rgba(249,115,22,0.2); }
+
+    .about-sidebar { display: flex; flex-direction: column; gap: 1.2rem; }
+    .photo-frame {
+      border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+      aspect-ratio: 1/1; background: var(--surface2);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #171c28 0%, #0d1018 100%);
+      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.7rem;
+    }
+    .photo-placeholder img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+    }
+    .photo-initials {
+      font-family: var(--serif); font-size: 4rem; font-weight: 400;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1;
+    }
+    .photo-caption { font-size: 0.72rem; color: var(--text-faint); letter-spacing: 0.06em; }
+    .info-list { display: flex; flex-direction: column; }
+    .info-item {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: 0.83rem;
+    }
+    .info-item:last-child { border-bottom: none; }
+    .info-key { color: var(--text-faint); font-weight: 500; }
+    .info-val { color: var(--text-muted); text-align: right; }
+    .info-val a { color: var(--accent); text-decoration: none; }
+    .info-val a:hover { text-decoration: underline; }
+
+    /* ── RESEARCH PROJECTS ── */
+    #projects { background: var(--bg); }
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      padding: 2rem; position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover { border-color: var(--text-faint); transform: translateY(-3px); }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .project-card:hover::before { opacity: 1; }
+    .p-blue::before  { background: linear-gradient(90deg, var(--accent), transparent); }
+    .p-purple::before{ background: linear-gradient(90deg, var(--accent2), transparent); }
+    .p-green::before { background: linear-gradient(90deg, var(--accent3), transparent); }
+    .p-orange::before{ background: linear-gradient(90deg, var(--accent4), transparent); }
+
+    .project-num {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 0.8rem; display: block;
+    }
+    .p-blue   .project-num { color: var(--accent); }
+    .p-purple .project-num { color: var(--accent2); }
+    .p-green  .project-num { color: var(--accent3); }
+    .p-orange .project-num { color: var(--accent4); }
+
+    .project-card h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text);
+      line-height: 1.35; margin-bottom: 0.9rem;
+    }
+    .project-meta { display: flex; gap: 1.2rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+    .project-meta-item { font-size: 0.78rem; color: var(--text-faint); }
+    .project-meta-item span { color: var(--text-muted); }
+
+    .findings-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.6rem;
+    }
+    .findings-list { display: flex; flex-direction: column; gap: 0.45rem; list-style: none; }
+    .findings-list li {
+      display: flex; gap: 0.6rem; align-items: flex-start;
+      font-size: 0.82rem; color: var(--text-muted); line-height: 1.55;
+    }
+    .finding-dot {
+      width: 16px; height: 16px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6rem; font-weight: 700; flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .p-blue   .finding-dot { background: rgba(91,141,238,0.2);  color: var(--accent); }
+    .p-purple .finding-dot { background: rgba(192,132,252,0.15); color: var(--accent2); }
+    .p-green  .finding-dot { background: rgba(52,211,153,0.12);  color: var(--accent3); }
+    .p-orange .finding-dot { background: rgba(249,115,22,0.12);  color: var(--accent4); }
+
+    .project-pubs {
+      margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border);
+      font-size: 0.77rem; color: var(--text-faint);
+    }
+    .project-pubs strong { color: var(--text-muted); font-weight: 500; }
+
+    /* ── PUBLICATIONS ── */
+    #publications { background: var(--surface); }
+    .pub-list { display: flex; flex-direction: column; }
+    .pub-item {
+      padding: 1.8rem 0; border-bottom: 1px solid var(--border);
+      display: grid; grid-template-columns: 52px 1fr auto;
+      gap: 1.5rem; align-items: start;
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-year { font-size: 0.76rem; color: var(--text-faint); font-weight: 600; padding-top: 0.2rem; }
+    .pub-title { font-size: 0.92rem; font-weight: 500; color: var(--text); margin-bottom: 0.35rem; line-height: 1.4; }
+    .pub-authors { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+    .pub-authors strong { color: var(--accent); font-weight: 600; }
+    .pub-journal { font-size: 0.78rem; color: var(--text-faint); font-style: italic; }
+    .pub-badge {
+      padding: 0.22rem 0.65rem; border-radius: 4px;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em;
+      white-space: nowrap; align-self: center;
+    }
+    .badge-iscience  { background: rgba(52,211,153,0.1);   color: #6ee7b7; border: 1px solid rgba(52,211,153,0.2); }
+    .badge-natcomms  { background: rgba(91,141,238,0.12);  color: #84aaff; border: 1px solid rgba(91,141,238,0.22); }
+    .badge-scirep    { background: rgba(192,132,252,0.1);  color: #d4a8fd; border: 1px solid rgba(192,132,252,0.2); }
+    .badge-cells     { background: rgba(249,115,22,0.1);   color: #fdba74; border: 1px solid rgba(249,115,22,0.2); }
+    .badge-generic   { background: rgba(91,141,238,0.08);  color: #84aaff; border: 1px solid rgba(91,141,238,0.15); }
+    .badge-prep      { background: rgba(100,116,139,0.15); color: #94a3b8; border: 1px solid rgba(100,116,139,0.25); font-style: italic; }
+    .badge-patent    { background: rgba(249,115,22,0.08);  color: #fdba74; border: 1px solid rgba(249,115,22,0.15); }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg); }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+      width: 1px; background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+    }
+    .timeline-item { position: relative; padding-bottom: 2.8rem; padding-left: 1.5rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: -2.4rem; top: 6px;
+      width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
+      border: 2px solid var(--bg); box-shadow: 0 0 0 3px rgba(91,141,238,0.2);
+    }
+    .timeline-dot.purple { background: var(--accent2); box-shadow: 0 0 0 3px rgba(192,132,252,0.2); }
+    .timeline-dot.green  { background: var(--accent3); box-shadow: 0 0 0 3px rgba(52,211,153,0.2); }
+    .timeline-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.25rem; gap: 1rem; }
+    .timeline-title { font-size: 0.98rem; font-weight: 600; color: var(--text); }
+    .timeline-period { font-size: 0.76rem; color: var(--text-faint); white-space: nowrap; padding-top: 0.15rem; }
+    .timeline-org { font-size: 0.83rem; color: var(--accent); margin-bottom: 0.65rem; font-weight: 500; }
+    .timeline-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.75; max-width: 700px; }
+    .timeline-desc ul { padding-left: 1.1rem; margin-top: 0.45rem; display: flex; flex-direction: column; gap: 0.3rem; }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--surface); }
+    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+    .edu-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.6rem; }
+    .edu-degree { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+    .edu-field { font-size: 0.82rem; color: var(--accent2); margin-bottom: 0.45rem; font-style: italic; }
+    .edu-school { font-size: 0.83rem; color: var(--text-muted); font-weight: 500; }
+    .edu-year { font-size: 0.75rem; color: var(--text-faint); margin-top: 0.4rem; }
+    .edu-note { font-size: 0.78rem; color: var(--text-faint); margin-top: 0.7rem; font-style: italic; line-height: 1.5; }
+
+    /* ── COLLABORATIONS ── */
+    #collaborations { background: var(--bg); }
+    .collab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+    .collab-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem; display: flex; gap: 1rem;
+    }
+    .collab-icon {
+      width: 40px; height: 40px; border-radius: 8px; background: var(--surface2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .collab-name { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .collab-affil { font-size: 0.78rem; color: var(--accent); margin-bottom: 0.45rem; }
+    .collab-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--surface); }
+    .skills-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+    .skill-group h3 {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-faint); margin-bottom: 1.1rem;
+    }
+    .skill-item { margin-bottom: 0.85rem; }
+    .skill-row { display: flex; justify-content: space-between; margin-bottom: 0.28rem; }
+    .skill-name { font-size: 0.83rem; color: var(--text-muted); }
+    .skill-pct  { font-size: 0.75rem; color: var(--text-faint); }
+    .skill-bar { height: 2px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .skill-fill { height: 100%; border-radius: 2px; }
+    .fill-blue   { background: linear-gradient(90deg, var(--accent),  #84aaff); }
+    .fill-purple { background: linear-gradient(90deg, var(--accent2), #ddd6fe); }
+    .fill-green  { background: linear-gradient(90deg, var(--accent3), #6ee7b7); }
+
+    /* ── GRANTS ── */
+    #grants { background: var(--bg); }
+    .grants-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    .grant-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; }
+    .grant-role {
+      display: inline-block; margin-bottom: 0.5rem;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.2rem 0.6rem; border-radius: 3px;
+    }
+    .grant-role.pi     { background: rgba(52,211,153,0.1);  color: var(--accent3); border: 1px solid rgba(52,211,153,0.2); }
+    .grant-role.collab { background: rgba(91,141,238,0.1);  color: var(--accent);  border: 1px solid rgba(91,141,238,0.2); }
+    .grant-title { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; line-height: 1.35; }
+    .grant-agency { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+    .grant-note { font-size: 0.78rem; color: var(--text-faint); font-style: italic; }
+
+    /* ── AWARDS ── */
+    #awards { background: var(--surface); }
+    .awards-list { display: flex; flex-direction: column; gap: 0; }
+    .award-item {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .award-item:last-child { border-bottom: none; }
+    .award-year-badge {
+      flex-shrink: 0; font-size: 0.7rem; font-weight: 600;
+      color: var(--text-faint); width: 36px;
+    }
+    .award-name { color: var(--text-muted); flex: 1; line-height: 1.45; }
+    .award-name strong { color: var(--text); font-weight: 500; }
+
+    /* ── TEACHING ── */
+    #teaching { background: var(--bg); }
+    .teaching-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .teaching-section h3 {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--text-faint); margin-bottom: 1rem;
+    }
+    .teaching-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .teaching-item {
+      display: flex; align-items: flex-start; gap: 0.8rem;
+      font-size: 0.83rem; color: var(--text-muted); line-height: 1.5;
+    }
+    .teaching-bullet {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; margin-top: 0.55rem;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--surface); }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-text p { color: var(--text-muted); font-size: 0.93rem; line-height: 1.8; margin-bottom: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.7rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 0.85rem 1.1rem; background: var(--bg);
+      border: 1px solid var(--border); border-radius: 8px;
+      text-decoration: none; font-size: 0.85rem; color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--text); }
+    .contact-link-icon {
+      width: 30px; height: 30px; background: var(--surface2); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; flex-shrink: 0;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 0.9rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group label {
+      font-size: 0.73rem; font-weight: 500; color: var(--text-faint);
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .form-group input, .form-group textarea {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+      padding: 0.7rem 0.95rem; color: var(--text);
+      font-family: var(--sans); font-size: 0.86rem; outline: none;
+      transition: border-color 0.2s; resize: none;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+    .form-group textarea { height: 120px; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1.8rem 3rem; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      color: var(--text-faint); font-size: 0.76rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .hero { padding: 6.5rem 1.5rem 3rem; }
+      .hero-stats { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-sidebar { max-width: 320px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .collab-grid { grid-template-columns: 1fr; }
+      .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .grants-grid { grid-template-columns: 1fr; }
+      .teaching-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .pub-item { grid-template-columns: 1fr; gap: 0.4rem; }
+      .timeline-header { flex-direction: column; gap: 0.15rem; }
+      footer { flex-direction: column; gap: 0.4rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Dr. Aditi Singh</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#collaborations">Collaborators</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Director, Bioinformatics Core &middot; Wayne State University</div>
+    <h1>Aditi Singh<span class="phd">PhD</span></h1>
+    <p class="hero-subtitle">
+      Computational biologist &amp; systems immunologist. I build multi-omic frameworks to decode
+      immune cell states in cancer, reproductive biology, and human tissue health.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        Detroit, MI
+      </div>
+      <div class="hero-meta-item">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+        aditi.singh2@med.wayne.edu
+      </div>
+      <div class="hero-meta-item">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        github.com/aditispt
+      </div>
+    </div>
+    <div class="btn-row">
+      <a href="#projects" class="btn btn-primary">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        View Research
+      </a>
+      <a href="#publications" class="btn btn-ghost">Publications</a>
+      <a href="#contact" class="btn btn-ghost">Contact</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-card">
+        <span class="stat-number">12+</span>
+        <span class="stat-label">Papers</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">4</span>
+        <span class="stat-label">Active Projects</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">8+</span>
+        <span class="stat-label">Trainees</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <h2>Decoding immune ecosystems<br />through multi-omics.</h2>
+        <p>
+          I am the <strong>Director of the Bioinformatics Core and Research Scientist</strong> at Wayne State University,
+          where I lead computational analysis across translational research programs in immunology, cancer biology,
+          and reproductive medicine. I received my PhD in Molecular Medicine &amp; Genetics from Wayne State in February 2025.
+        </p>
+        <p>
+          My research integrates <strong>single-cell transcriptomics, CITE-seq, spatial genomics, and machine learning</strong>
+          to characterize immune cell state transitions across complex biological environments — including pregnancy, inflammation,
+          and cancer. A central focus is <strong>macrophage and dendritic cell biology</strong>, particularly how these cells
+          govern immune tolerance, immune evasion, and tissue remodeling.
+        </p>
+        <p>
+          My long-term goal is to build <strong>predictive models of immune ecosystem dynamics</strong> that inform
+          therapeutic strategies in cancer, reproductive disease, and inflammatory disorders. I am also a committed
+          mentor, having trained 8+ trainees ranging from high school students to resident physicians, and an advocate
+          for DEIA in computational biology.
+        </p>
+        <div class="tags">
+          <span class="tag tag-blue">scRNA-seq</span>
+          <span class="tag tag-blue">CITE-seq</span>
+          <span class="tag tag-blue">Spatial transcriptomics</span>
+          <span class="tag tag-purple">Multi-omic integration</span>
+          <span class="tag tag-purple">Machine learning</span>
+          <span class="tag tag-green">Tumor microenvironment</span>
+          <span class="tag tag-green">Macrophage biology</span>
+          <span class="tag tag-green">Reproductive immunology</span>
+          <span class="tag tag-orange">HPC pipelines</span>
+          <span class="tag tag-orange">Trajectory inference</span>
+        </div>
+      </div>
+
+      <div class="about-sidebar fade-in">
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <img src="https://avatars.githubusercontent.com/u/154374248?v=4" alt="Dr. Aditi Singh" />
+          </div>
+        </div>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-key">Position</span>
+            <span class="info-val">Director, Bioinformatics Core</span>
+          </div>
+          <div class="info-item">
+            <span class="info-key">Institution</span>
+            <span class="info-val">Wayne State University</span>
+          </div>
+          <div class="info-item">
+            <span class="info-key">Location</span>
+            <span class="info-val">Detroit, MI</span>
+          </div>
+          <div class="info-item">
+            <span class="info-key">GitHub</span>
+            <span class="info-val"><a href="https://github.com/aditispt" target="_blank">aditispt</a></span>
+          </div>
+          <div class="info-item">
+            <span class="info-key">Google Scholar</span>
+            <span class="info-val"><a href="#" target="_blank">View profile</a></span>
+          </div>
+          <div class="info-item">
+            <span class="info-key">Phone</span>
+            <span class="info-val">(313) 917-5559</span>
+          </div>
+          <div class="info-item">
+            <span class="info-key">Societies</span>
+            <span class="info-val">ASRI &middot; AACR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Research Portfolio</div>
+    <h2 class="fade-in">Active Research Projects</h2>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card p-blue fade-in">
+        <span class="project-num">Project 01 &middot; ESC Stress Biology</span>
+        <h3>Pan-Stress Forces Loss of Stemness and Drives Developmental Imbalance</h3>
+        <div class="project-meta">
+          <div class="project-meta-item">Context: <span>Early embryogenesis &amp; miscarriage</span></div>
+          <div class="project-meta-item">Method: <span>Bulk RNAseq &rarr; scRNAseq</span></div>
+        </div>
+        <div class="findings-label">Key Findings</div>
+        <ul class="findings-list">
+          <li><div class="finding-dot">1</div>All stressors override stemness, forcing ESCs out of their na&iuml;ve (0th) lineage state</li>
+          <li><div class="finding-dot">2</div>Stress responses segregate into two distinct lineage-imbalance trajectories</li>
+          <li><div class="finding-dot">3</div>Identified two pan-stress marker genes that robustly predict lineage imbalance independent of stressor identity</li>
+        </ul>
+        <div class="project-pubs">
+          <strong>Publications:</strong> Scientific Reports (2025) &middot; Birth Defects Research (2024) &middot; Patent filed April 2025
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card p-purple fade-in">
+        <span class="project-num">Project 02 &middot; Reproductive Immunology</span>
+        <h3>scRNA-seq Identification of Tissue-Resident Dendritic Cells in Endometrium</h3>
+        <div class="project-meta">
+          <div class="project-meta-item">Context: <span>Implantation failure &amp; uterine biology</span></div>
+          <div class="project-meta-item">Method: <span>scRNA-seq &rarr; CITE-seq</span></div>
+        </div>
+        <div class="findings-label">Key Findings</div>
+        <ul class="findings-list">
+          <li><div class="finding-dot">1</div>Identified 7 subsets of uDCs including progenitor cells, challenging the dogma that DCs are recruited from peripheral blood</li>
+          <li><div class="finding-dot">2</div>Mapped the developmental trajectory of uDCs through the various stages of the endometrial cycle</li>
+          <li><div class="finding-dot">3</div>Assigned functional roles (immune regulation &amp; antigen presentation) to each subset based on gene expression profiles</li>
+        </ul>
+        <div class="project-pubs">
+          <strong>Publication:</strong> iScience (2025)
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card p-green fade-in">
+        <span class="project-num">Project 03 &middot; Maternal–Fetal Interface</span>
+        <h3>Sex-Specific Immune Regulation at the Maternal–Fetal Interface</h3>
+        <div class="project-meta">
+          <div class="project-meta-item">Context: <span>Pregnancy &amp; miscarriage</span></div>
+          <div class="project-meta-item">Method: <span>Bulk RNAseq &rarr; scRNAseq &rarr; CellChat</span></div>
+        </div>
+        <div class="findings-label">Key Findings</div>
+        <ul class="findings-list">
+          <li><div class="finding-dot">1</div>Sex-specific gene expression differences emerge early in normal placental development</li>
+          <li><div class="finding-dot">2</div>Male placentas show innate inflammatory skewing; females favored adaptive immune regulation</li>
+          <li><div class="finding-dot">3</div>Distinct immune failure pathways identified in miscarriages</li>
+        </ul>
+        <div class="project-pubs">
+          <strong>Manuscript under review:</strong> 2026
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card p-orange fade-in">
+        <span class="project-num">Project 04 &middot; Cancer Immunology</span>
+        <h3>Cancer Cell Sialylation Fuels Immune Evasion and Stromal Remodeling in Ovarian Cancer</h3>
+        <div class="project-meta">
+          <div class="project-meta-item">Context: <span>Ovarian cancer TME</span></div>
+          <div class="project-meta-item">Method: <span>CRISPR KO &rarr; Flow Cytometry &rarr; scRNAseq</span></div>
+        </div>
+        <div class="findings-label">Key Findings</div>
+        <ul class="findings-list">
+          <li><div class="finding-dot">1</div>Tumor cell hypersialylation drives immune-dependent ovarian cancer progression</li>
+          <li><div class="finding-dot">2</div>ST6GAL1-mediated sialylation promotes expansion of immunosuppressive myeloid cells and suppresses cytotoxic immunity</li>
+          <li><div class="finding-dot">3</div>Hypersialylation impairs innate danger sensing and reprograms the tumor microenvironment</li>
+          <li><div class="finding-dot">4</div>Targeting sialylation reverses immune suppression and prevents tumor progression</li>
+        </ul>
+        <div class="project-pubs">
+          <strong>Manuscript in prep</strong> &middot; AACR 2025 abstract
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <div class="section-label">Peer-Reviewed Work</div>
+    <h2 class="fade-in">Publications</h2>
+    <div class="pub-list">
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2026</div>
+        <div>
+          <div class="pub-title">Fetal Sex Shapes the Immune Landscape at the Maternal–Fetal Interface During Early Human Pregnancy</div>
+          <div class="pub-authors"><strong>Singh A</strong>, Mor G et al.</div>
+          <div class="pub-journal">Under Review</div>
+        </div>
+        <div class="pub-badge badge-prep">Under Review</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Decoding Functional and Developmental Trajectories of Uterine Dendritic Cells</div>
+          <div class="pub-authors"><strong>Singh A</strong>, Mor G et al.</div>
+          <div class="pub-journal">iScience, 2025</div>
+        </div>
+        <div class="pub-badge badge-iscience">iScience</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Novel Kinetic and Developmental Transcriptomic Pan-Stress Responses of Embryonic Stem Cells</div>
+          <div class="pub-authors"><strong>Singh A</strong>, Rappolee D</div>
+          <div class="pub-journal">Scientific Reports, 2025</div>
+        </div>
+        <div class="pub-badge badge-scirep">Sci. Reports</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Prenatal Exposure to Zika Virus Shapes Offspring Neutrophil Function in a Sex-specific Manner</div>
+          <div class="pub-authors">Ding J, Maxwell A, <strong>Singh A</strong> et al.</div>
+          <div class="pub-journal">Nature Communications, 2025</div>
+        </div>
+        <div class="pub-badge badge-natcomms">Nat. Comms</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Cancer Cell Sialylation Fuels Immune Evasion and Stromal Remodeling in Ovarian Cancer</div>
+          <div class="pub-authors">Fox A, <strong>Singh A</strong>, Mor G et al.</div>
+          <div class="pub-journal">Manuscript in Preparation</div>
+        </div>
+        <div class="pub-badge badge-prep">In Prep</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Pan-stress marker genes — Patent filed April 2025</div>
+          <div class="pub-authors"><strong>Singh A</strong>, Rappolee D et al.</div>
+          <div class="pub-journal">US Patent Application, April 2025</div>
+        </div>
+        <div class="pub-badge badge-patent">Patent</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title">A Single Cell Transcriptomic Fingerprint of Stressed Premature, Imbalanced Differentiation of Embryonic Stem Cells</div>
+          <div class="pub-authors"><strong>Singh A*</strong>, Marben T, Tang W, Awonuga AO, Ruden DM, Puscheck E, Feng H, Korzeniewski SJ, Rappolee DA</div>
+          <div class="pub-journal">Birth Defects Research, 2024</div>
+        </div>
+        <div class="pub-badge badge-generic">Birth Defects Res.</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title">Novel high throughput screen reports that benzo(a)pyrene overrides mouse trophoblast stem cell multipotency, inducing SAPK activity, HAND1 and differentiated trophoblast giant cells</div>
+          <div class="pub-authors">Kidder BL, Ruden X, <strong>Singh A</strong>, Marben TA, Rass L, Chakravarty A et al.</div>
+          <div class="pub-journal">Placenta, 2024</div>
+        </div>
+        <div class="pub-badge badge-generic">Placenta</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-title">Epigenetic Reprogramming in Mice and Humans: From Fertilization to Primordial Germ Cell Development</div>
+          <div class="pub-authors"><strong>Singh A</strong>, Rappolee DA, Ruden DM</div>
+          <div class="pub-journal">Cells, 12(14):1874, 2023</div>
+        </div>
+        <div class="pub-badge badge-cells">Cells</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-title">Pathological epigenetic events and reversibility: the intersection between hallmarks of aging and developmental origin of health and disease</div>
+          <div class="pub-authors">Ruden DM, <strong>Singh A</strong>, Rappolee DA</div>
+          <div class="pub-journal">Epigenomics, 2023</div>
+        </div>
+        <div class="pub-badge badge-generic">Epigenomics</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2022</div>
+        <div>
+          <div class="pub-title">Using high throughput screens to predict miscarriages with placental stem cells and long-term stress effects with embryonic stem cells</div>
+          <div class="pub-authors">Puscheck EE, Ruden X, <strong>Singh A</strong>, Abdulhasan M, Ruden DM, Awonuga AO, Rappolee DA</div>
+          <div class="pub-journal">Birth Defects Research, 2022 (PMID 35979652)</div>
+        </div>
+        <div class="pub-badge badge-generic">Birth Defects Res.</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">Insights into the molecular mechanisms regulating mammalian hair cell regeneration</div>
+          <div class="pub-authors">Hu Z, <strong>Singh A</strong>, Bojrab D, Sim N</div>
+          <div class="pub-journal">Current Opinion in Otolaryngology &amp; Head and Neck Surgery, 2021</div>
+        </div>
+        <div class="pub-badge badge-generic">Curr Opin</div>
+      </div>
+
+      <div class="pub-item fade-in">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">Generation of a Spiral Ganglion Neuron Degeneration Mouse Model</div>
+          <div class="pub-authors">Hu Z, Komal F, <strong>Singh A</strong>, Deng M</div>
+          <div class="pub-journal">Frontiers in Cell and Developmental Biology, 2021</div>
+        </div>
+        <div class="pub-badge badge-generic">Front. Cell Dev.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Career</div>
+    <h2 class="fade-in">Experience</h2>
+    <div class="timeline fade-in">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <div class="timeline-title">Director, Bioinformatics Core &amp; Research Scientist</div>
+          <div class="timeline-period">Feb 2025 — Present</div>
+        </div>
+        <div class="timeline-org">Wayne State University &middot; Detroit, MI</div>
+        <div class="timeline-desc">
+          Leading the Bioinformatics Core supporting multi-omics analysis across translational research programs
+          in immunology, cancer biology, and reproductive medicine.
+          <ul>
+            <li>Lead computational analysis of large-scale single-cell and spatial-omic datasets (&gt;100,000 cells per study)</li>
+            <li>Develop interpretable ML models to characterize disease-relevant cellular programs and identify therapeutic targets</li>
+            <li>Built scalable HPC pipelines for multi-omic integration, trajectory inference, and pathway modeling</li>
+            <li>Provide training and consultation to investigators on study design, single-cell analysis, and multi-omics integration</li>
+            <li>Contribute computational strategy to multi-disciplinary teams of clinicians, immunologists, and data scientists</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot purple"></div>
+        <div class="timeline-header">
+          <div class="timeline-title">Graduate Research Assistant — Computational Immunology</div>
+          <div class="timeline-period">Aug 2021 — Feb 2025</div>
+        </div>
+        <div class="timeline-org">Wayne State University &middot; Detroit, MI</div>
+        <div class="timeline-desc">
+          Conducted integrative computational analyses of human immune cell populations across reproductive
+          and disease contexts using single-cell and spatial genomics.
+          <ul>
+            <li>Identified previously uncharacterized uterine dendritic cell subtypes using AI-driven single-cell analysis (iScience, 2025)</li>
+            <li>Integrated scRNA-seq, CITE-seq, and imaging data across 10 stages of the human menstrual cycle</li>
+            <li>Developed reproducible pipelines for QC, batch correction, clustering, and trajectory inference</li>
+            <li>Mentored 8+ trainees including fellows, residents, undergraduates, and high school interns</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot green"></div>
+        <div class="timeline-header">
+          <div class="timeline-title">Graduate Research Assistant — Stem Cell &amp; Epigenetics</div>
+          <div class="timeline-period">Dec 2019 — May 2021</div>
+        </div>
+        <div class="timeline-org">Wayne State University &middot; Detroit, MI</div>
+        <div class="timeline-desc">
+          Investigated epigenetic regulation and cellular differentiation programs in iPSCs and developmental models.
+          Applied microscopy, immunofluorescence, and gene expression profiling to characterize differentiation states.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Academic Background</div>
+    <h2 class="fade-in">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card fade-in">
+        <div class="edu-degree">Doctor of Philosophy</div>
+        <div class="edu-field">Molecular Medicine &amp; Genetics</div>
+        <div class="edu-school">Wayne State University &middot; Detroit, MI</div>
+        <div class="edu-year">Completed February 2025</div>
+        <div class="edu-note">NIH T32 predoctoral trainee. Thesis focused on single-cell and multi-omic characterization of immune cell populations.</div>
+      </div>
+      <div class="edu-card fade-in">
+        <div class="edu-degree">Master of Science</div>
+        <div class="edu-field">Biotechnology</div>
+        <div class="edu-school">University of Salford &middot; Manchester, UK</div>
+        <div class="edu-year">December 2018</div>
+        <div class="edu-note">Vice-Chancellor's Academic Excellence Scholarship recipient.</div>
+      </div>
+      <div class="edu-card fade-in">
+        <div class="edu-degree">Bachelor of Technology</div>
+        <div class="edu-field">Biotechnology</div>
+        <div class="edu-school">Dr. D. Y. Patil Biotechnology Institute &middot; Pune, India</div>
+        <div class="edu-year">May 2016</div>
+        <div class="edu-note">First position in academics. Meritorious Student of the Year award.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLABORATIONS -->
+<section id="collaborations">
+  <div class="container">
+    <div class="section-label">Network</div>
+    <h2 class="fade-in">Active Collaborations</h2>
+    <div class="collab-grid">
+
+      <div class="collab-card fade-in">
+        <div class="collab-icon">🔬</div>
+        <div>
+          <div class="collab-name">Ayesha Alvero, MD</div>
+          <div class="collab-affil">Wayne State University — Dept. of Oncology</div>
+          <div class="collab-desc">Collaborative studies on ovarian cancer tumor microenvironment remodeling, including macrophage polarization and immune suppression programs associated with differential tumor sialylation (SNA<sup>high</sup> vs SNA<sup>low</sup>).</div>
+        </div>
+      </div>
+
+      <div class="collab-card fade-in">
+        <div class="collab-icon">🧫</div>
+        <div>
+          <div class="collab-name">Radhika Gogoi, MD</div>
+          <div class="collab-affil">Karmanos Cancer Institute / Wayne State University</div>
+          <div class="collab-desc">Spatial and transcriptomic analysis of fallopian tube and endometrial cancer progression, focusing on immune niche organization and early tumor microenvironment dynamics.</div>
+        </div>
+      </div>
+
+      <div class="collab-card fade-in">
+        <div class="collab-icon">🧬</div>
+        <div>
+          <div class="collab-name">Jiahui Ding, MD, PhD</div>
+          <div class="collab-affil">Wayne State University</div>
+          <div class="collab-desc">Collaborative work on hematopoietic stem cell differentiation and immune lineage development using transcriptomic and functional genomic approaches. Co-author on Nature Communications (2025).</div>
+        </div>
+      </div>
+
+      <div class="collab-card fade-in">
+        <div class="collab-icon">🤝</div>
+        <div>
+          <div class="collab-name">Gil Mor, MD, PhD</div>
+          <div class="collab-affil">Wayne State University</div>
+          <div class="collab-desc">Long-standing collaboration on maternal–fetal immune interactions, including single-cell and multi-omic characterization of decidual and placental immune cell populations across multiple published studies.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Technical Expertise</div>
+    <h2 class="fade-in">Skills</h2>
+    <div class="skills-layout fade-in">
+      <div class="skill-group">
+        <h3>Programming &amp; Analysis</h3>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">R / Bioconductor</span><span class="skill-pct">Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-blue" style="width:96%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-blue" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Network analysis &amp; pathway enrichment</span><span class="skill-pct">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-blue" style="width:88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">High-dimensional data visualization</span><span class="skill-pct">Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-blue" style="width:93%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">HPC pipeline development</span><span class="skill-pct">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-blue" style="width:82%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Bioinformatics Tools</h3>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Seurat</span><span class="skill-pct">Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-purple" style="width:97%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Monocle</span><span class="skill-pct">Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-purple" style="width:92%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">CellChat</span><span class="skill-pct">Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-purple" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">DESeq2 / EdgeR</span><span class="skill-pct">Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-purple" style="width:94%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">ML &amp; statistical modeling</span><span class="skill-pct">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-purple" style="width:84%"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Experimental &amp; Translational</h3>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">scRNA-seq / CITE-seq</span><span class="skill-pct">Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-green" style="width:96%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Spatial transcriptomics</span><span class="skill-pct">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-green" style="width:87%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Multiplex immunohistochemistry</span><span class="skill-pct">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-green" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Imaging-sequencing integration</span><span class="skill-pct">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-green" style="width:83%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-row"><span class="skill-name">Cohort-level translational analysis</span><span class="skill-pct">Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-green" style="width:91%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRANTS -->
+<section id="grants">
+  <div class="container">
+    <div class="section-label">Funding</div>
+    <h2 class="fade-in">Grants</h2>
+    <div class="grants-grid">
+      <div class="grant-card fade-in">
+        <span class="grant-role pi">Principal Investigator</span>
+        <div class="grant-title">NIH DP2 New Innovator Award</div>
+        <div class="grant-agency">National Institutes of Health</div>
+        <div class="grant-note">Submitted (July &amp; September cycles)</div>
+      </div>
+      <div class="grant-card fade-in">
+        <span class="grant-role pi">Principal Investigator</span>
+        <div class="grant-title">CLEAR RETCC Pilot Grant</div>
+        <div class="grant-agency">Wayne State University — CLEAR RETCC</div>
+        <div class="grant-note">Awarded 2024 &amp; 2025</div>
+      </div>
+      <div class="grant-card fade-in">
+        <span class="grant-role pi">Predoctoral Trainee</span>
+        <div class="grant-title">NIH T32 Training Grant</div>
+        <div class="grant-agency">National Institutes of Health — CBI, Wayne State University</div>
+        <div class="grant-note">Funded third year of PhD research</div>
+      </div>
+      <div class="grant-card fade-in">
+        <span class="grant-role collab">Collaborator</span>
+        <div class="grant-title">NIH R21 — Hematopoietic Stem Cell Differentiation</div>
+        <div class="grant-agency">National Institutes of Health</div>
+        <div class="grant-note">PI: Jiahui Ding, MD, PhD — provided computational analysis framework</div>
+      </div>
+      <div class="grant-card fade-in">
+        <span class="grant-role collab">Collaborator</span>
+        <div class="grant-title">NIH R01 — Ovarian Cancer TME</div>
+        <div class="grant-agency">National Institutes of Health</div>
+        <div class="grant-note">PI: Ayesha Alvero, MD — computational &amp; multi-omics analysis expertise</div>
+      </div>
+      <div class="grant-card fade-in">
+        <span class="grant-role collab">Collaborator</span>
+        <div class="grant-title">NIH R01 — Translational Immunology Studies</div>
+        <div class="grant-agency">National Institutes of Health</div>
+        <div class="grant-note">PI: Gil Mor, MD, PhD — contributed to grant development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="container">
+    <div class="section-label">Recognition</div>
+    <h2 class="fade-in">Awards &amp; Honors</h2>
+    <div class="awards-list fade-in">
+      <div class="award-item">
+        <div class="award-year-badge">2025</div>
+        <div class="award-name"><strong>Invited Panelist</strong> — Multi-omics Harmonization, NextGen Omics &amp; Spatial Conference 2026</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2025</div>
+        <div class="award-name"><strong>Invited Panelist</strong> — Women in Genomics, Gen Omics Conference 2026</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2024</div>
+        <div class="award-name"><strong>2nd Place</strong> — Trainee Research Day Symposium, C.S. Mott Center</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2024</div>
+        <div class="award-name"><strong>CLEAR RETCC Pilot Grant</strong> — Principal Investigator funding, Wayne State University</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2024</div>
+        <div class="award-name"><strong>ASRI Travel Award</strong> — Presentation at the Annual ASRI 2024 Meeting</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2023</div>
+        <div class="award-name"><strong>NIH T32 Training Grant</strong> — Awarded by CBI Department, Wayne State University (3rd year PhD funding)</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2023</div>
+        <div class="award-name"><strong>Travel Award</strong> — Podium presentation, BDRP Annual Conference</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2023</div>
+        <div class="award-name"><strong>ATTRACT Award</strong> — Advanced Training Through Research And Collaborative Teamwork (summer internship funding)</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2023</div>
+        <div class="award-name"><strong>Hon'ble Mention</strong> — Graduate Student Research Presentation Day (GSRPD)</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2021</div>
+        <div class="award-name"><strong>Graduate Research Assistantship</strong> — Awarded by WSU to fund first 2 years of PhD</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2018</div>
+        <div class="award-name"><strong>Vice-Chancellor's Academic Excellence Scholarship</strong> — University of Salford</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year-badge">2016</div>
+        <div class="award-name"><strong>Meritorious Student of the Year &amp; First Position in Academics</strong> — Dr. D. Y. Patil Biotechnology Institute</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING & MENTORSHIP -->
+<section id="teaching">
+  <div class="container">
+    <div class="section-label">Training</div>
+    <h2 class="fade-in">Teaching &amp; Mentorship</h2>
+    <div class="teaching-grid fade-in">
+      <div class="teaching-section">
+        <h3>Courses Taught</h3>
+        <div class="teaching-list">
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div><strong style="color:var(--text);font-weight:500">Guest Lecture:</strong> R Programming and Bioinformatics — Wayne State University (CBI), 2025</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div><strong style="color:var(--text);font-weight:500">Teaching Assistant:</strong> Stem Cell Development (Graduate level) — Wayne State University, 2023</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div><strong style="color:var(--text);font-weight:500">Teaching Assistant:</strong> Embryonic Development (Graduate level) — Wayne State University, 2021</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="teaching-section">
+        <h3>Mentees Trained</h3>
+        <div class="teaching-list">
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>1 Graduate student (international exchange program)</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>2 High school students through DTC, 2025</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>1 Maternal-Fetal Medicine Fellow, 2024</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>3 Resident physicians, 2023–2024</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>2 High school students through DTC, 2023–2024</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>2 Undergraduate students from Barbers Fellowship, 2022</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>Peer mentoring at Chemistry Biology Interface Meeting, 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="teaching-section">
+        <h3>Service &amp; Leadership</h3>
+        <div class="teaching-list">
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>Organizing member, Trainee Research Day Symposium, C.S. Mott Center, 2024</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>Departmental Representative, CMMG at Graduate Senate, 2024</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>DEIA member, BDRP Society, 2023–present</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-bullet"></div>
+            <div>Organizing member, MARTS 2023 Conference</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="fade-in">Contact</h2>
+    <div class="contact-layout fade-in">
+      <div class="contact-text">
+        <p>
+          I welcome collaborations in computational immunology, cancer biology, and reproductive medicine,
+          as well as invitations to speak, consult on multi-omics study design, or discuss opportunities
+          for trainees interested in bioinformatics. Feel free to reach out.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:aditi.singh2@med.wayne.edu" class="contact-link">
+            <div class="contact-link-icon">✉️</div>
+            aditi.singh2@med.wayne.edu
+          </a>
+          <a href="tel:3139175559" class="contact-link">
+            <div class="contact-link-icon">📞</div>
+            (313) 917-5559
+          </a>
+          <a href="https://github.com/aditispt" target="_blank" class="contact-link">
+            <div class="contact-link-icon">🐙</div>
+            github.com/aditispt
+          </a>
+          <a href="#" class="contact-link">
+            <div class="contact-link-icon">📖</div>
+            Google Scholar Profile
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@institution.edu" />
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Collaboration / Speaking / Mentorship / Other" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell me about your interest or project..."></textarea>
+        </div>
+        <button class="btn btn-primary" style="align-self:flex-start">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>&copy; 2026 Dr. Aditi Singh &mdash; All rights reserved.</div>
+  <div>Director, Bioinformatics Core &middot; Wayne State University, Detroit, MI</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+  );
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.style.color = '');
+        const a = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (a) a.style.color = 'var(--text)';
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => spy.observe(s));
+</script>
+</body>
+</html>
